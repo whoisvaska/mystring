@@ -5,19 +5,11 @@
 
 int main() {
 
-	std::string s("diuasdhiuashdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssisdhdsadadad");
+	MyString s;
 
-	//s = "123";
+	s = "hello amazing world";
 
-	std::cout << s.capacity() << std::endl;
+	s.replace(6, 7, "wonderful");
 
-
-	s.clear();
-	std::cout << s.capacity() << std::endl;
-	s.shrink_to_fit();
-	std::cout << s.capacity() << std::endl;
-
-
-
-	return 0;
+	std::cout << s << std::endl;
 }
