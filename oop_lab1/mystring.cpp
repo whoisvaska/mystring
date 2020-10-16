@@ -299,10 +299,15 @@ void MyString::replace(unsigned int index, unsigned int count, const char* strin
 	const char* rbuf[max_size / 2];
 	unsigned int rbuf_size = this->lenght_ - index - count;
 	unsigned int lbuf_size = index;
+	this->lenght_ = lbuf_size + strlen(string) + rbuf_size;
+
+	if (this->capacity_ < this->lenght_ + 1) {
+		this->ReAllocate(this->lenght_ + 1);
+	}
+
 	memcpy(rbuf, this->my_string + index + count, rbuf_size);
 	memcpy(this->my_string + index, string, strlen(string));
-	memcpy(this->my_string + index + count, rbuf, rbuf_size);
-	this->lenght_ = lbuf_size + strlen(string) + rbuf_size;
+	memcpy(this->my_string + index + strlen(string), rbuf, rbuf_size);
 	this->my_string[this->lenght_] = 0;
 	//memcpy(this->my_string + index, string, count);
 }
