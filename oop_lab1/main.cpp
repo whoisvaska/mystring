@@ -4,16 +4,23 @@
 
 
 int main() {
+	std::string s;
+	std::cout << s.length() << std::endl;
+	std::cout << s.size() << std::endl;
+	std::cout << s.capacity() << "\n" << std::endl;
 
-	MyString s;
+	s = "123";
 
-	s = "hello amazing world";
-
-	std::cout << s.capacity() << std::endl;
+	std::cout << s.length() << std::endl;
+	std::cout << s.size() << std::endl;
+	std::cout << s.capacity() << "\n" << std::endl;
 	
-	s.replace(6, 7, "wonderful");
-	
-	std::cout << s.capacity() << std::endl;
+	s.shrink_to_fit();
 
-	std::cout << s << std::endl;
+	std::cout << s.length() << std::endl;
+	std::cout << s.size() << std::endl;
+	std::cout << s.capacity() << "\n" << std::endl;
+
+	return 0;
+
 }

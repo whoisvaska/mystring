@@ -293,9 +293,9 @@ void MyString::append(const char* str, unsigned int index, unsigned int count) {
 	//this->insert(str + index, at, count);
 }
 
-/*add check if allocated size is less than required*/
+
 void MyString::replace(unsigned int index, unsigned int count, const char* string) {
-	const int max_size = 1024;
+	const unsigned int max_size = 1024;
 	const char* rbuf[max_size / 2];
 	unsigned int rbuf_size = this->lenght_ - index - count;
 	unsigned int lbuf_size = index;
@@ -316,6 +316,8 @@ void MyString::replace(unsigned int index, unsigned int count, const char* strin
 //void MyString::replace(unsigned int index, unsigned int count, const char* string) {
 //	memcpy(this->my_string + index, string, count);
 //}
+
+//void test(std::string)
 
 
 int MyString::find(const char* str) {
